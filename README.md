@@ -3,7 +3,7 @@
 Using implicit namespaces.
 
 ## Usage
-To avoid messing with relative imports and namespaces to work properly, install each package (here we use editable mode).
+To avoid messing with relative imports and `PYTHONPATH`, install each package (here we use editable mode).
 
 ```bash
 cd package1
