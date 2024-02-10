@@ -1,0 +1,45 @@
+# Technically this section is not required, because this top-level pyproject.ml
+# is only used for configuring tools, not for building anything.
+# But we nevertheless have it, to be consistent with projects and libraries.
+
+[tool.poetry]
+name = "monorepo"
+version = "0.1.0"
+description = "Starter template"
+authors = ["Salvador Ferradás <sftpo@pm.me>"]
+repository = "https://github.com/salvaft/python-monorepo-starter"
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Operating System :: OS Independent",
+]
+
+# A list of PyPI trove classifiers that describe the project. Optional
+# Using packages disables the package auto-detection feature meaning you have to explicitly specify the “default” package.
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+black = "^21.12b0"
+mypy = "^0.910"
+pylint = "^2.10"
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+force-exclude = '''
+^/archives/.*$
+'''
+
+[tool.pylint."messages control"]
+disable = [
+    "empty-docstring",
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+]
+ignore = ["setup.py", "__init__.py"]
+ignore-paths = ['.*/tests']
